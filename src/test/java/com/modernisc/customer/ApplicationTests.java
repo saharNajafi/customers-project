@@ -1,13 +1,14 @@
-package com.modernisc.customerInfo;
+package com.modernisc.customer;
+
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CustomerInfoApplicationTests {
+public class ApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }

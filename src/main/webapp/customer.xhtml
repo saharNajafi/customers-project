@@ -35,7 +35,7 @@
                     <h:form id="customers">
                         <p:growl id="growl" sticky="true" />
 
-                        <p:dataTable id="customerList" var="customer" value="#{customersController.customers}">
+                        <p:dataTable id="customerList" var="customer" value="#{customerController.customers}">
                             <p:column headerText="Id">
                                 <h:outputText value="#{customer.id}"/>
                             </p:column>
@@ -55,14 +55,14 @@
 
                             <p:column>
                                 <p:commandButton update="customerList" value="Delete" icon="ui-icon-closethick"
-                                                 action="#{customersController.delete(customer)}"
+                                                 action="#{customerController.delete(customer)}"
                                                  styleClass="ui-priority-primary">
                                 </p:commandButton>
                             </p:column>
                         </p:dataTable>
                         <br/>
                         <p:commandButton style="float: right" id="save" value="Save" tyleClass="ui-priority-primary"
-                                         action="#{customersController.update}" icon="ui-icon-disk" update="growl">
+                                         action="#{customerController.update}" icon="ui-icon-disk" update="growl">
                             <f:ajax execute="@form" render="@form"/>
                         </p:commandButton>
                     </h:form>
@@ -78,25 +78,25 @@
                     <h:form id="add">
                         <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
                             <p:outputLabel for="firstName" value="First name"/>
-                            <p:inputText id="firstName" value="#{customersController.customer.firstName}"/>
+                            <p:inputText id="firstName" value="#{customerController.customer.firstName}"/>
                             <p:message for="firstName"/>
 
                             <p:outputLabel for="lastName" value="Last name"/>
                             <p:inputText id="lastName"
-                                         value="#{customersController.customer.lastName}">
+                                         value="#{customerController.customer.lastName}">
                             </p:inputText>
                             <p:message for="lastName"/>
 
                             <p:outputLabel for="email" value="E-Mail"/>
                             <p:inputText id="email"
-                                         value="#{customersController.customer.email}">
+                                         value="#{customerController.customer.email}">
                             </p:inputText>
                             <p:message for="email"/>
 
 
 
                             <p:commandButton update="@form :customers:customerList" value="Add"
-                                             action="#{customersController.add}">
+                                             action="#{customerController.add}">
                             </p:commandButton>
                         </h:panelGrid>
                     </h:form>

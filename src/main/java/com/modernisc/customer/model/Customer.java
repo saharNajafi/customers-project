@@ -1,38 +1,26 @@
-package com.modernisc.customers.model;
+package com.modernisc.customer.model;
 
 import javax.persistence.*;
-//import javax.validation.constraints.Email;
-//import javax.validation.constraints.NotEmpty;
-//import javax.validation.constraints.Past;
-import java.time.LocalDate;
+
+
 
 
 @Entity
 @Table(name = "TBL_CUSTOMERS")
-public class Customers {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-//    @NotEmpty
     private String firstName;
 
     @Column(nullable = false)
-//    @NotEmpty
     private String lastName;
 
     @Column(nullable = false)
-//    @NotEmpty
-//    @Email
     private String email;
-//
-//    @Past
-//    private LocalDate dayOfBirth;
-
-//    @Column(nullable = false)
-//    private String customerId;
 
     public Long getId() {
         return id;
