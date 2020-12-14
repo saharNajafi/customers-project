@@ -78,18 +78,25 @@
                     <h:form id="add">
                         <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
                             <p:outputLabel for="firstName" value="First name"/>
-                            <p:inputText id="firstName" value="#{customerController.customer.firstName}"/>
+                            <p:inputText id="firstName" value="#{customerController.customer.firstName}"
+                                         required="true" requiredMessage="Please enter your firstName."/>
                             <p:message for="firstName"/>
 
                             <p:outputLabel for="lastName" value="Last name"/>
                             <p:inputText id="lastName"
-                                         value="#{customerController.customer.lastName}">
+                                         value="#{customerController.customer.lastName}"
+                                         required="true" requiredMessage="Please enter your lastName.">
                             </p:inputText>
                             <p:message for="lastName"/>
 
                             <p:outputLabel for="email" value="E-Mail"/>
                             <p:inputText id="email"
-                                         value="#{customerController.customer.email}">
+                                         value="#{customerController.customer.email}"
+                                         required="true" requiredMessage="Please enter your email address."
+                                         validatorMessage="Invalid email format">
+                                <f:validateRegex
+                                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+
                             </p:inputText>
                             <p:message for="email"/>
 
