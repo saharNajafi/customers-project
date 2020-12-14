@@ -24,7 +24,11 @@ public class CustomerController
 
     @PostConstruct
     public void init() {
-        this.customers = customersService.getAllCustomers();
+        try {
+            this.customers = customersService.getAllCustomers();
+        } catch (ResourceNotFoundException e) {
+            new ResourceNotFoundException("An exception has occurred");
+        }
     }
 
     public void delete(Customer customer) {
